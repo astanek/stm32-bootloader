@@ -31,7 +31,7 @@
  */
 
 /* Maximum allowed errors (user defined). */
-#define X_MAX_ERRORS ((uint8_t)3u)
+#define X_MAX_ERRORS ((uint8_t)30u)
 
 /* Sizes of the packets. */
 #define X_PACKET_NUMBER_SIZE  ((uint16_t)2u)
@@ -65,6 +65,6 @@ typedef enum {
   X_ERROR         = 0xFFu  /**< Generic error. */
 } xmodem_status;
 
-void xmodem_receive(void);
+void xmodem_receive(uint32_t address);
 
 #endif /* XMODEM_H_ */

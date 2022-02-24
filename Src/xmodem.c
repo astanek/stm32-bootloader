@@ -25,14 +25,14 @@ static xmodem_status xmodem_error_handler(uint8_t *error_number, uint8_t max_err
  * @param   void
  * @return  void
  */
-void xmodem_receive(void)
+void xmodem_receive(uint32_t address)
 {
   volatile xmodem_status status = X_OK;
   uint8_t error_number = 0u;
 
   x_first_packet_received = false;
   xmodem_packet_number = 1u;
-  xmodem_actual_flash_address = FLASH_APP_START_ADDRESS;
+  xmodem_actual_flash_address = address;
 
   /* Loop until there isn't any error (or until we jump to the user application). */
   while (X_OK == status)
